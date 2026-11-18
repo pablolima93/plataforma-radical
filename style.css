@@ -152,11 +152,6 @@ ul, ol { padding: 0; list-style: none; }
   text-align: center; letter-spacing: -0.01em;
   max-width: min(62vw, 980px);
 }
-.thumb {
-  display: inline-block; width: 1.3em; height: .86em; vertical-align: -.1em;
-  margin: 0 .12em; border-radius: .14em; overflow: hidden; background: var(--burgundy-2);
-}
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Capítulos ---------- */
 .chapter { padding: var(--section) var(--gutter); }
