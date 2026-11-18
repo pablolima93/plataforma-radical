@@ -160,7 +160,7 @@ ul, ol { padding: 0; list-style: none; }
 
 /* ---------- Capítulos ---------- */
 .chapter { padding: var(--section) var(--gutter); }
-.chapter h2, .checkin-h, .orgs-h, .stats-h {
+.chapter h2, .checkin-h, .orgs-h {
   font-family: var(--display); font-weight: 400;
   font-size: var(--step-head); line-height: .95; letter-spacing: -0.02em;
 }
@@ -348,22 +348,6 @@ ul, ol { padding: 0; list-style: none; }
 .stairs li:nth-child(4) { margin-left: calc(100% / 12 * 6); }
 .stairs li:nth-child(4) .stair { color: var(--red); }
 
-/* Números */
-.stats {
-  background: var(--burgundy); padding: var(--section) var(--gutter);
-  display: grid; grid-template-columns: repeat(12, 1fr); gap: 40px var(--gutter); align-items: center;
-}
-.stats > * { max-width: none; }
-.stats-h { grid-column: 1 / span 5; font-size: clamp(2rem, 1.2rem + 2.4vw, 3.25rem); }
-.stats-h span { display: block; color: var(--muted-on-dark); }
-.ledger { grid-column: 7 / span 6; display: grid; gap: 20px; }
-.ledger .row { display: grid; grid-template-columns: clamp(4.5rem, 2rem + 6vw, 8.5rem) 1fr; gap: 0 28px; align-items: baseline; }
-.fig {
-  font-family: var(--display); font-size: clamp(4rem, 2rem + 5vw, 7rem); line-height: 1;
-  text-align: right; font-variant-numeric: tabular-nums lining-nums; color: var(--pink);
-}
-.ledger dd { font-size: 1.0625rem; max-width: 34ch; }
-
 /* CTA */
 .cta {
   position: relative; min-height: 78svh; background: var(--ink); color: var(--paper);
@@ -430,9 +414,9 @@ ul, ol { padding: 0; list-style: none; }
   .statement { text-align: left; max-width: none; font-size: 1.5rem; line-height: 1.25; }
   .intro { padding: 96px var(--gutter); }
 
-  .split, .ws-head, .adm-head, .checkin-ui, .stats, .foot-top { grid-template-columns: 1fr; }
+  .split, .ws-head, .adm-head, .checkin-ui, .foot-top { grid-template-columns: 1fr; }
   .split-text, .split-media, .ws-head h2, .ws-intro, .adm-head h2, .adm-head .lead,
-  .ticket-help, .ticket-examples, .ticket-result, .stats-h, .ledger,
+  .ticket-help, .ticket-examples, .ticket-result,
   .foot-note:first-child, .foot-note:nth-child(2), .foot-up { grid-column: 1 / -1; grid-row: auto; }
   .split-media { margin-top: 48px; padding-bottom: 18%; }
   .shot-phone { left: auto; right: 0; width: 34%; }
@@ -463,8 +447,6 @@ ul, ol { padding: 0; list-style: none; }
   .stairs li:nth-child(3) { margin-left: 12vw; }
   .stairs li:nth-child(4) { margin-left: 18vw; }
 
-  .ledger .row { grid-template-columns: 4.5rem 1fr; gap: 0 18px; }
-  .fig { font-size: 3.5rem; }
 
   .cta-l1, .cta-l2 { font-size: 18vw; }
   .cta-row { flex-direction: column; gap: 12px; }
