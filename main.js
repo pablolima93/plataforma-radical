@@ -68,40 +68,6 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
   onScroll();
 })();
 
-/* Simulador de check-in (dados fictícios). */
-(() => {
-  const input = document.getElementById("ticket");
-  const box = document.querySelector("[data-result]");
-  if (!input || !box) return;
-  const field = (f) => box.querySelector(`[data-f="${f}"]`);
-  const tickets = {
-    OMJJYIXI: { name: "Lívia Andrade", type: "Acampante", group: "Grupo Vermelho, quarto 12", pay: "Pago no Pix", verdict: "Check-in liberado", state: "ok" },
-    K7Q2PZ0B: { name: "Tiago Moreira", type: "Acampante", group: "Grupo Azul, quarto 4", pay: "Aguardando pagamento", verdict: "Pagamento pendente: encaminhe ao caixa", state: "warn" },
-    EQP4471C: { name: "Helena Prado", type: "Equipante", group: "Cozinha, Grupo Verde", pay: "Pago no cartão em 3x", verdict: "Check-in liberado, retire o crachá", state: "ok" },
-    R9TT31AX: { name: "Samuel Duarte", type: "Acampante", group: "Grupo Amarelo, quarto 7", pay: "Pago no cartão", verdict: "Check-in já feito hoje às 18:42", state: "done" },
-  };
-  const empty = { name: "—", type: "—", group: "—", pay: "—", verdict: "Código não encontrado. Confira as letras ou busque pelo nome.", state: "none" };
-  const buttons = document.querySelectorAll(".ticket-examples button");
-
-  const render = () => {
-    const code = input.value.toUpperCase().replace(/[^A-Z0-9]/g, "");
-    if (input.value !== code) input.value = code;
-    const t = tickets[code] || (code.length < 8 ? { ...empty, verdict: "Digite os 8 caracteres do código." } : empty);
-    field("name").textContent = t.name;
-    field("type").textContent = t.type;
-    field("group").textContent = t.group;
-    field("pay").textContent = t.pay;
-    const v = field("verdict");
-    v.textContent = t.verdict;
-    v.dataset.state = t.state;
-    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.code === code)));
-    if (!reduceMotion) { box.classList.remove("flash"); void box.offsetWidth; box.classList.add("flash"); }
-  };
-  input.addEventListener("input", render);
-  buttons.forEach((b) => b.addEventListener("click", () => { input.value = b.dataset.code; render(); }));
-  render();
-})();
-
 /* Interruptores das organizações. */
 document.querySelectorAll(".band .switch").forEach((sw) => {
   sw.addEventListener("click", () => {
