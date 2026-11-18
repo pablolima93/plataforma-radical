@@ -385,7 +385,7 @@ ul, ol { padding: 0; list-style: none; }
 .foot-note:first-child { grid-column: 1 / span 3; }
 .foot-note:nth-child(2) { grid-column: 4 / span 4; }
 .foot-mark { font-family: var(--display); font-size: 1.5rem; }
-.foot-up { grid-column: 12; justify-self: end; font-size: .9375rem; }
+.foot-up { grid-column: 11 / span 2; justify-self: end; font-size: .9375rem; white-space: nowrap; }
 .foot-display { margin-top: auto; padding-top: 64px; font-family: var(--display); font-size: clamp(3.4rem, 1rem + 10.4vw, 12rem); line-height: .95; letter-spacing: -0.03em; }
 .foot-display a { text-decoration: none; }
 .foot-display a:hover { color: var(--burgundy); }
